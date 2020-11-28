@@ -70,6 +70,23 @@
           "pathName": "pages/goods_list/goods_list",
           "query": "cid=5",
           "scene": null
+        },
+        {
+          "name": "pages/goods_detail/goods_detail",
+          "pathName": "pages/goods_detail/goods_detail",
+          "query": "goods_id=43976",
+          "scene": null
+        },
+        {
+          "name": "pages/cart/cart",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "scene": null
         }
       ]
     }
