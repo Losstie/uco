@@ -1,4 +1,7 @@
 // pages/auth/auth.js
+import {request} from  "../../request/index"
+import {getSetting, chooseAddress, openSetting, showModal, showToast, login} from "../../utils/asyncWX"
+import regeneratorRuntim, { AsyncIterator } from '../../lib/runtime/runtime'
 Page({
 
   /**
@@ -7,60 +10,26 @@ Page({
   data: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  async handleGetUserInfo(e){
+    try {
+      // 获取用户信息
+      const { encrypteData, rawData, iv, signature } = e.detail;
+      // 获取小程序登陆成功后的code
+      const {code} = await login();
+      // 发送请求获取用户token
+      const loginParams = {encrypteData, rawData, iv, signature , code};
+      const {token} = await request({
+        url:'/users/wxlogin',
+        data:loginParams,
+        method: 'post'
+      });
+      // 缓存token 跳转上一层
+      wx.setStorageSync('token', token);
+      wx.navigateBack({
+        delta: 1
+      })
+      } catch(err){
+        console.log(err)
+      }
   }
 })

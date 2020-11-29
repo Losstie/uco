@@ -86,6 +86,12 @@
         {
           "name": "pages/pay/pay",
           "pathName": "pages/pay/pay",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/auth/auth",
+          "pathName": "pages/auth/auth",
           "scene": null
         }
       ]

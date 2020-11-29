@@ -76,5 +76,38 @@ export const showToast = ({title})=>{
     })
   })
 }
-
+/**
+ * Promise 形式 lonin
+ * @param {object} param0 参数
+ */
+export const login = ()=>{
+  return new Promise((resolve, rejected)=>{
+    wx.login({
+      timeout: 10000,
+      success: res=>{
+        resolve(res);
+      },
+      fail:(err)=>{
+        rejected(err);
+      }
+    });
+  })
+}
+/**
+ * Promise 形式 小程序的微信支付
+ * @param {object} pay 参数
+ */
+export const requestPayment = (pay)=>{
+  return new Promise((resolve, rejected)=>{
+    wx.requestPayment({
+      ...pay,
+      success: res=>{
+        resolve(res);
+      },
+      fail: err=>{
+        rejected(err);
+      }
+    })
+  })
+}
 
