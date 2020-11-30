@@ -53,7 +53,7 @@ Page({
         return;
       }
       // 创建订单
-      // const header = { Authorization: token};
+      // const header = {Authorization: token};
       // 准备请求体参数
       const order_price = this.data.totalPrice;
       const consignee_addr = this.data.address.all;

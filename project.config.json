@@ -92,6 +92,12 @@
         {
           "name": "pages/auth/auth",
           "pathName": "pages/auth/auth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
           "scene": null
         }
       ]
