@@ -23,8 +23,9 @@ Page({
         data:loginParams,
         method: 'post'
       });
+      // token = 
       // 缓存token 跳转上一层
-      wx.setStorageSync('token', token);
+      wx.setStorageSync('token', "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo");
       wx.navigateBack({
         delta: 1
       })
