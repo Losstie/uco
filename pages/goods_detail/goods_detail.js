@@ -9,6 +9,7 @@ Page({
     goods_id:'',
     goodsObj:{}
 
+    
   },
   // 商品信息
   goodsInfo:{},
