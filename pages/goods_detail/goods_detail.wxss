@@ -37,6 +37,8 @@
   border-left: 2rpx solid #000;
 }
 
+.icon-shoucang1 { color: orangered;}
+
 .goods_info_title {
   font-size: 32rpx;
   color: var(--themeColor);

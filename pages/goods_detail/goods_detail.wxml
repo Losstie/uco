@@ -12,8 +12,8 @@
 <!-- 商品简介信息 开始 -->
 <view class="goods_name_row">
   <view class="goods_name">{{goodsObj.goods_name}}</view>
-  <view class="goods_collect">
-    <view class="iconfont icon-shoucang"></view>
+  <view class="goods_collect" bindtap="handleCollect">
+    <view class="iconfont {{isCollect?'icon-shoucang1':'icon-shoucang'}}"></view>
     <view class="collect_text">收藏</view>
   </view>
 </view>
